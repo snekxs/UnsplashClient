@@ -1,0 +1,120 @@
+@font-face {
+  font-family: Pacifico;
+  src: url("assets/fonts/Pacifico-Regular.ttf");
+}
+
+html,
+body {
+  height: auto;
+  overflow: auto;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+#grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: masonry;
+  z-index: 1;
+  animation-name: fade-in;
+  animation-duration: 2s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  #grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  #grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 375px) {
+  #grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+#sentinel {
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+
+#scroll-to-top {
+  font-size: 24px;
+  height: 60px;
+  width: 60px;
+  background-color: rgba(67, 83, 143, 1);
+  border-radius: 50%;
+  display: block;
+  border: none;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.photo-container {
+  position: relative;
+}
+
+#splash-screen {
+  position: absolute;
+  user-select: none;
+  font-family: "Pacifico";
+  font-size: 60px;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; /* Center the text horizontally */
+}
+
+#enter-button {
+  display: inline-block;
+  margin-top: 20px;
+  border-style: solid;
+  color: white;
+  border-radius: 50%;
+  border-color: white;
+  width: 75px;
+  height: 75px;
+  background: none;
+  cursor: pointer;
+}

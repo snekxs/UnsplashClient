@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+/>
+<script
+  src="https://kit.fontawesome.com/fd5790723c.js"
+  crossorigin="anonymous"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>FRMR.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="splash-screen">
+      <h1 class="ml2">Welcome</h1>
+      <button id="enter-button">
+        <i class="fa-solid fa-xl fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <div id="grid" style="display: none"></div>
+
+    <button id="scroll-to-top" style="display: none">
+      <span class="material-symbols-outlined"> arrow_upward </span>
+    </button>
+
+    <script type="module" src="renderer.js"></script>
+    <script type="module" src="splashscreen.js"></script>
+    <div id="sentinel"></div>
+  </body>
+</html>
