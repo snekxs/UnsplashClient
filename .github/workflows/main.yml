@@ -1,12 +1,14 @@
-# name of your github action
+# Name of your GitHub Action
 name: CI
-# this will help you specify where to run
+
+# This will help you specify where to run
 on:
   push:
     branches:
-      # this will run on the electron branch
+      # This will run on the master branch
       - master
-# this is where the magic happens, each job happens in parallel btw
+
+# This is where the magic happens, each job happens in parallel
 jobs:
   build_on_mac:
     runs-on: macOS-latest
@@ -17,16 +19,17 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 10.16
-      - name: see directory
+      - name: See directory
         run: ls
-build_on_win:
-  runs-on: windows-2016
-  steps:
-    - uses: actions/checkout@master
-      with:
-        ref: feature/github-actions
-    - uses: actions/setup-node@master
-      with:
-        node-version: 10.16
-    - name: see directory
-      run: ls
+
+  build_on_win:
+    runs-on: windows-2016
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: feature/github-actions
+      - uses: actions/setup-node@master
+        with:
+          node-version: 10.16
+      - name: See directory
+        run: ls
